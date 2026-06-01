@@ -14,7 +14,7 @@ st.set_page_config(
 df = pd.read_csv("data/student_data.csv")
 
 
-total_expense = df["Expense"].sum()
+total_expense = df["Expense"].sum() 
 average_study = df["StudyHours"].mean()
 
 top_category = df.groupby("Category")["Expense"].sum().idxmax()

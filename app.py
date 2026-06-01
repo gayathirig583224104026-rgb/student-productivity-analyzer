@@ -3,17 +3,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import io
 
-# Page Settings
+
 st.set_page_config(
     page_title="Student Productivity Analyzer",
     page_icon="📊",
     layout="wide"
 )
 
-# Read Data
+
 df = pd.read_csv("data/student_data.csv")
 
-# Calculations
+
 total_expense = df["Expense"].sum()
 average_study = df["StudyHours"].mean()
 
@@ -24,15 +24,15 @@ productivity_score = (
     + df["SleepHours"].mean() * 5
 )
 
-# Title
+
 st.title("📊 Student Productivity Analytics Dashboard")
 st.markdown("Analyze expenses, study habits, and productivity trends.")
 
-# Sidebar
+
 st.sidebar.title("📊 Dashboard Menu")
 st.sidebar.info("Student Productivity Analyzer")
 
-# Metrics Row
+
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
@@ -93,5 +93,5 @@ ax.pie(
 
 st.pyplot(fig)
 
-# Success Message
+
 st.success("✅ Analysis Completed Successfully!")

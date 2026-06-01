@@ -1,18 +1,17 @@
 import pandas as pd
 
-# Load CSV file
+
 df = pd.read_csv("data/student_data.csv")
 
-# Total expense
 total_expense = df["Expense"].sum()
 
-# Average study hours
+
 average_study = df["StudyHours"].mean()
 
-# Highest expense category
+
 top_category = df.groupby("Category")["Expense"].sum().idxmax()
 
-# Productivity score
+
 productivity_score = (
     df["StudyHours"].mean() * 10
     + df["SleepHours"].mean() * 5
